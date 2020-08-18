@@ -11,9 +11,9 @@ O objetivo deste trabalho foi contruir um filtro de desfoque, com diferentes imp
 ## Como testar o programa:
 Esse programa contem diferentes instruções que podem ser usadas para facilidade:
 
-* `$ make`:
+* `$ make test`:
 
-	Executa todos os testes e todas as funções e gera o arquivo do doguinho na pasta principal e o arquivo PNG correspondente ao gráfico comparando as 3 implementações
+	Executa todos os testes e todas as funções e gera o arquivo do doguinho na pasta principal e o arquivo PDF correspondente ao gráfico comparando as 3 implementações
 
 * `$ make main_t`
 

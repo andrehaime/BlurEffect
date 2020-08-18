@@ -12,8 +12,9 @@ USERNAME ?= $(USER)
 ZIPFILE = $(USERNAME).zip
 ZIP = zip
 
-main: clean test_t test_p test_s
+test: clean test_t test_p test_s
 	python3 ./doc/plot_new.py
+	make clean
 
 main_t:
 	gcc -o$(TARGET_t) $(FILENAME_t) $(IMG) $(LIB) -lm -lpthread -I./ -lfreeimage
@@ -39,9 +40,14 @@ test_s: main_s
 	cp out_s.o src/python/
 	python3 ./$(DIR)/python/plot_s.py
 
-
-
 clean:
+	$(RM) ./$(TARGET_p)
+	$(RM) ./$(TARGET_s)
+	$(RM) ./$(TARGET_t)
+	$(RM) ./*.o
+	$(RM) ./doc/*.o
+
+cleanALL:
 	$(RM) ./$(TARGET_p)
 	$(RM) ./*.jpg
 	$(RM) ./$(TARGET_s)
